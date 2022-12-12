@@ -9,17 +9,22 @@
 
 int[,,] CreateMatrixRndDouble(int dim1, int dim2, int dim3)
 {
-    int min = 10;
-    int max = 99;
+
 
     int[,,] matrix = new int[dim1, dim2, dim3];
-    Random rnd = new Random();
+
+    int num = 10;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
+      
         for (int j = 0; j < matrix.GetLength(1); j++)
+           
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                matrix[i, j, k] = rnd.Next(min, max + 1);
+                    
+                    matrix[i, j, k] = num; 
+                    num ++;
+                
             }
 
     }
@@ -36,8 +41,8 @@ void PrintMatrix(int[,,] matrix)
         {
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-            if (k < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j, k],5} ({i},{j},{k}) ");
-            else Console.Write($"{matrix[i, j, k],5} ({i},{j},{k})");
+                if (k < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j, k],5} ({i},{j},{k}) ");
+                else Console.Write($"{matrix[i, j, k],5} ({i},{j},{k})");
             }
         }
         Console.WriteLine(" | ");
