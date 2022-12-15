@@ -8,9 +8,9 @@
 
 int SumNamber(int num1, int num2)
 {
-        
-        if (num1 > num2) return 0;
-        return num2 + SumNamber(num1, num2 - 1);
+
+    if (num1 > num2) return 0;
+    return num2 + SumNamber(num1, num2 - 1);
 
 }
 
@@ -21,16 +21,20 @@ int n = Convert.ToInt32(Console.ReadLine());
 Console.Write("до M: ");
 int m = Convert.ToInt32(Console.ReadLine());
 
-if (n >= m)
+if (n > m)
 {
-    Console.WriteLine($"Введен не верный промежуток");
+    int sumNamber = SumNamber(m, n);
+    Console.WriteLine($"сумму натуральных элементов в промежутке от {n} до {m} = {sumNamber}");
 }
 
-else
+else if (n < m)
 {
     int sumNamber = SumNamber(n, m);
     Console.WriteLine($"сумму натуральных элементов в промежутке от {n} до {m} = {sumNamber}");
-
 }
 
+else if (n == m)
+{
+    Console.WriteLine($"Введен не верный промежуток");
+}
 
